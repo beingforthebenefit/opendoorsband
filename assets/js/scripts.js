@@ -32,3 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function changeImage(src) {
+    document.getElementById('main-image').src = src;
+}
