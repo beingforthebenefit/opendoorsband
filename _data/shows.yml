@@ -1,0 +1,13 @@
+# _data/shows.yml
+
+- date: 2024-03-05
+  venue: "The Great Venue"
+  location: "San Francisco, CA"
+  info: "18+ show"
+  ticketLink: "http://example.com/tickets1"
+
+- date: 2024-05-10
+  venue: "The Awesome Arena"
+  location: "New York, NY"
+  info: "All ages"
+  ticketLink: "http://example.com/tickets2"

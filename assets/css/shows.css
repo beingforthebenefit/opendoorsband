@@ -1,0 +1,43 @@
+.shows-container {
+    margin: 20px;
+}
+
+.show {
+    background-color: #f3f3f3;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.venue {
+    font-size: 1.1em;
+    color: #139EAD; /* Adjust color to fit your design */
+}
+
+.location {
+    font-style: italic;
+}
+
+.additional-info {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.ticket-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #139EAD;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.ticket-link:hover {
+    background-color: #0f7a9a; /* Darker shade for hover */
+}
