@@ -6,7 +6,6 @@ url: "https://beingforthebenefit.github.io" # the base hostname & protocol for y
 
 # Build settings
 markdown: kramdown
-# theme: minima
 plugins:
   - jekyll-feed
 
