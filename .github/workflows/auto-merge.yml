@@ -12,7 +12,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Fetch all history for all branches and tags
+          fetch-depth: 0
+          token: ${{ secrets.ACTION_PUSH_TOKEN }}
 
       - name: Merge main into gh-pages
         run: |
