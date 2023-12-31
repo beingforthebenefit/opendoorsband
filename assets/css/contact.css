@@ -1,0 +1,46 @@
+/* Contact Page Styles */
+.contact-page {
+    text-align: center;
+    padding: 40px;
+}
+
+.contact-title {
+    font-family: 'Cinzel, sans-serif';
+    text-transform: uppercase;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-info > div {
+    margin: 0 20px;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
+    color: #43859b; /* Accent color */
+}
+
+.contact-info a {
+    color: #139EAD; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-info > div {
+        margin-bottom: 20px;
+    }
+}
