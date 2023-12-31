@@ -1,0 +1,29 @@
+---
+layout: default
+title: Music
+---
+<style>
+    .music-page {
+        background: url('{{ "/assets/img/bg-marble.png" | relative_url }}') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+<div class="music-page">
+    <div class="left-column">
+        <img src="{{ '/assets/img/vinyl.jpg' | relative_url }}" alt="Album Cover" class="album-cover">
+    </div>
+    <div class="right-column">
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="{{ '/assets/music/Break-on-Through.mp3' | relative_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <ul class="tracklist">
+                <li data-src="{{ '/assets/music/Break-on-Through.mp3' | relative_url }}">Break On Through</li>
+                <li data-src="{{ '/assets/music/Love-Me-Two-Times.mp3' | relative_url }}">Love Me Two Tiimes</li>
+                <li data-src="{{ '/assets/music/People-are-Strange.mp3' | relative_url }}">People Are Strange</li>
+                <li data-src="{{ '/assets/music/Touch-Me.mp3' | relative_url }}">Touch Me</li>
+            </ul>
+        </div>
+    </div>
+</div>
