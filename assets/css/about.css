@@ -1,6 +1,7 @@
 /* About Page Styles */
 .about-page {
     display: flex;
+    flex-direction: row;
     padding: 20px;
     background: linear-gradient(to right, #43859b 33%, #313131 33%);
 }
@@ -43,4 +44,25 @@
 /* Link Styles */
 .about-page a {
     color: #139EAD; /* Using the global hover color */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .about-page {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .left-column, .right-column {
+        padding: 10px;
+        text-align: center; /* Center align text for mobile */
+    }
+
+    .about-image {
+        max-width: 80%; /* Adjust image size for mobile */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .about-title {
+        margin-top: 20px;
+    }
 }

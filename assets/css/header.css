@@ -58,6 +58,10 @@ header {
     color: #139EAD;
 }
 
+.close-nav {
+    display: none;
+}
+
 /* Hamburger Menu - Initially Hidden */
 .hamburger-menu {
     display: none;
@@ -81,18 +85,47 @@ header {
         z-index: 1000;
     }
 
+    .site-navigation.active {
+        display: flex;
+    }
+
+    .navigation-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navigation-menu a {
+        font-size: 30px;
+        padding: 10px;
+    }
+
     .navigation-menu li {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .close-nav {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     /* Show Hamburger Menu on Mobile */
     .hamburger-menu {
+        font-size: 30px;
+        position: absolute;
         display: block;
         cursor: pointer;
-        position: absolute;
-        top: 10px;
+        top: 20px;
         right: 20px;
-        z-index: 1001;
+        z-index: 3;
     }
 
     /* Hide Desktop Navigation on Mobile */
