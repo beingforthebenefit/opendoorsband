@@ -1,0 +1,92 @@
+/* Bios Page Styles */
+.bios-page {
+    width: 100%;
+}
+
+.bio-container {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.bio-text, .bio-image {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Text within bio-text should stack on separate lines */
+.bio-text {
+    display: block; /* Ensuring block level layout for text container */
+}
+
+/* For the left and right classes, set the background and animations */
+.left { animation: slideInFromLeft 1s ease; }
+.right { animation: slideInFromRight 1s ease; }
+
+/* Alternate background colors for each bio-container */
+.bio-container:nth-child(odd) {
+    background: linear-gradient(to right, #313131 67%, #43859b 33%);
+}
+
+.bio-container:nth-child(even) {
+    background: linear-gradient(to left, #313131 67%, #43859b 33%);
+}
+
+/* Bio Image and Text Styles */
+.bio-image img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keeps the image square */
+}
+
+.bio-title {
+    font-family: 'Cinzel, sans-serif';
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block; /* Ensures title takes up full line */
+}
+
+.bio-subtitle {
+    font-family: 'Cinzel, sans-serif';
+    color: #43859b; /* Same as background blue */
+    margin-bottom: 10px;
+    display: block; /* Ensures subtitle takes up full line */
+}
+
+.bio-text p {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
+    display: block; /* Ensures paragraph takes up full line */
+}
+
+/* Slide in animations */
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .bio-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .bio-image, .bio-text {
+        padding: 10px;
+        text-align: center; /* Center align text for mobile */
+    }
+
+    .bio-image img {
+        max-width: 80%; /* Adjust image size for mobile */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .bio-text {
+        text-align: left;
+    }
+}
