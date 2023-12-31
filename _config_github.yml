@@ -1,0 +1,29 @@
+# Site settings
+title: Open Doors Band
+description: A Doors Tribute Band
+baseurl: "/opendoorsband" # the subpath of your site, e.g. /blog
+url: "https://beingforthebenefit.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+# theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - docker-compose.yml
+  - Dockerfile
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .sass-cache
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
