@@ -1,0 +1,60 @@
+/* Music Page Styles */
+.music-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    color: black; /* Set text color to black */
+}
+
+.left-column, .right-column {
+    flex: 1;
+    text-align: center;
+}
+
+.album-cover {
+    max-width: 100%;
+    height: auto;
+}
+
+.player-container {
+    margin: 0 auto;
+    text-align: left;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tracklist {
+    list-style: none;
+    padding: 0;
+}
+
+.tracklist li {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: black; /* Ensure list items are also black */
+}
+
+.tracklist li:hover {
+    background-color: #e1e1e1;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .music-page {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        flex: none;
+        width: 80%;
+        margin: 10px auto;
+    }
+}

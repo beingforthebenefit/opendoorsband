@@ -5,8 +5,11 @@
 
 .bio-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     flex-direction: row;
+    padding: 0 100px;
 }
 
 .bio-text, .bio-image {
@@ -36,7 +39,6 @@
 .bio-image img {
     max-width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* Keeps the image square */
 }
 
 .bio-title {

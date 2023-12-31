@@ -20,3 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
     closeNav.addEventListener('click', toggleMobileNav);
     window.addEventListener('resize', handleResize);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const player = document.getElementById('audio-player');
+    const tracklist = document.querySelectorAll('.tracklist li');
+
+    tracklist.forEach(track => {
+        track.addEventListener('click', function() {
+            player.src = this.getAttribute('data-src');
+            player.play();
+        });
+    });
+});
