@@ -1,0 +1,31 @@
+/* Gallery Page Styles */
+.gallery-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-image-container img {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.thumbnails-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}

@@ -1,0 +1,16 @@
+---
+layout: default
+title: Photos
+---
+
+<div class="gallery-container">
+    <div class="main-image-container">
+        <img id="main-image" src="{{ '/assets/img/photos/retro-junkie.jpg' | relative_url }}" alt="Open Doors playing at Retro Junkie">
+    </div>
+    <div class="thumbnails-container">
+        <!-- Thumbnails -->
+        {% for image in site.data.gallery_images %}
+            <img class="thumbnail" src="{{ image.url | relative_url }}" alt="{{ image.alt }}" onclick="changeImage('{{ image.url | relative_url }}')">
+        {% endfor %}
+    </div>
+</div>
