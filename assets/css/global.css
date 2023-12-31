@@ -1,0 +1,12 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel', sans-serif;
+}
+
+a:hover {
+    color: #139EAD;
+}

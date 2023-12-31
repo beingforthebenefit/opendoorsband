@@ -1,0 +1,46 @@
+/* About Page Styles */
+.about-page {
+    display: flex;
+    padding: 20px;
+    background: linear-gradient(to right, #43859b 33%, #313131 33%);
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: slideInFromLeft 1s ease;
+}
+
+.right-column {
+    flex: 1;
+    padding: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keeps the image square */
+}
+
+.about-title {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Slide in animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Link Styles */
+.about-page a {
+    color: #139EAD; /* Using the global hover color */
+}
