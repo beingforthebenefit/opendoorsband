@@ -58,6 +58,10 @@ header {
     color: #139EAD;
 }
 
+.close-nav {
+    display: none;
+}
+
 /* Hamburger Menu - Initially Hidden */
 .hamburger-menu {
     display: none;
@@ -104,6 +108,7 @@ header {
     }
 
     .close-nav {
+        display: block;
         position: absolute;
         top: 20px;
         right: 20px;
