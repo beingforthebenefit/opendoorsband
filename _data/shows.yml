@@ -1,13 +1,19 @@
 # _data/shows.yml
 
-- date: 2024-03-05
-  venue: "The Great Venue"
+- date: 2023-08-12
+  venue: "The Fireside Lounge"
   location: "San Francisco, CA"
-  info: "18+ show"
-  ticketLink: "http://example.com/tickets1"
+  info: "Featuring The Dead Ends"
+  eventLink: "https://www.facebook.com/events/1077248343440112/"
 
-- date: 2024-05-10
-  venue: "The Awesome Arena"
-  location: "New York, NY"
-  info: "All ages"
-  ticketLink: "http://example.com/tickets2"
+- date: 2023-07-29
+  venue: "Hotel Utah Saloon"
+  location: "San Francisco, CA"
+  info: "Featuring High Horse and Lofi Legs"
+  eventLink: "https://www.facebook.com/events/1837199043341982/"
+
+- date: 2023-06-22
+  venue: "Retro Junkie"
+  location: "Walnut Creek, CA"
+  info: "Featuring Liquid Sky (Jimi Hendrix Tribute)"
+  eventLink: "https://www.facebook.com/events/188313124176031/"
