@@ -1,8 +1,18 @@
 # _data/shows.yml
+- date: 2024-05-10
+  venue: "Retro Junkie"
+  info: ""
+  eventLink: "https://retrojunkiebar.com/upcoming-events"
+
+- date: 2024-04-20
+  venue: "The Fireside Lounge"
+  location: "Alameda, CA"
+  info: ""
+  eventLink: "https://www.thefiresidelounge.com/live-music"
 
 - date: 2023-08-12
   venue: "The Fireside Lounge"
-  location: "San Francisco, CA"
+  location: "Alameda, CA"
   info: "Featuring The Dead Ends"
   eventLink: "https://www.facebook.com/events/1077248343440112/"
 
