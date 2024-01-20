@@ -1,6 +1,7 @@
 # _data/shows.yml
 - date: 2024-05-10
   venue: "Retro Junkie"
+  location: "Walnut Creek, CA"
   info: ""
   eventLink: "https://retrojunkiebar.com/upcoming-events"
 
