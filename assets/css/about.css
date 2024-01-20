@@ -4,6 +4,7 @@
     flex-direction: row;
     padding: 20px;
     background: linear-gradient(to right, #43859b 33%, #313131 33%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .left-column {
@@ -18,17 +19,12 @@
 .right-column {
     flex: 1;
     padding: 20px;
-    font-family:'Courier New', Courier, monospace;
 }
 
 .about-image {
     max-width: 100%;
     height: auto;
     aspect-ratio: 1 / 1; /* Keeps the image square */
-}
-
-.about-title {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 /* Slide in animation */
