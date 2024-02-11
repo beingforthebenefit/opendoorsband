@@ -1,0 +1,27 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        {% for show in site.data.shows %}
+            {% assign show_date = show.date | date: '%Y-%m-%d' %}
+            {% assign current_date = site.time | date: '%Y-%m-%d' %}
+            {% if show_date >= current_date %}
+                <item>
+                    <title>{{ show.venue }}</title>
+                    <info>{{ show.info }}</info>
+                    {% if show.eventLink %}
+                        <link>{{ show.eventLink }}</link>
+                    {% else %}
+                        <link>{{ site.url }}/shows</link>
+                    {% endif %}
+                    <link>{{ show.eventLink }}</link>
+                    <details>{{ show.location }} - {{ show.date | date_to_string }}</details>
+                    <pubDate>{{ show.date | date_to_rfc822 }}</pubDate>
+                    <guid>{{ show.eventLink }}</guid>
+                </item>
+            {% endif %}
+        {% endfor %}
+    </channel>
+</rss>
