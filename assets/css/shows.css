@@ -6,6 +6,7 @@
 .show {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 20px;
@@ -15,12 +16,13 @@
 .show-image {
     max-height: 300px;
     width: auto;
-    float: right;
+    order: 2;
     margin-left: 15px;
 }
 
 .show-details {
     flex-grow: 1;
+    order: 1;
 }
 
 .date, .venue, .location, .additional-info {
