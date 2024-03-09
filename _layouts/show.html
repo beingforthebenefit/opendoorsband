@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="show-page">
+    <h1>{{ page.venue }} - {{ page.date | date: "%B %d, %Y" }}</h1>
+    {% if page.image %}
+        <img src="{{ page.image }}" alt="{{ page.venue }}" style="max-height: 300px; width: auto;">
+    {% endif %}
+    <p class="date">{{ page.date | date_to_string }}</p>
+    <p class="venue">{{ page.venue }}</p>
+    <p class="location">{{ page.location }}</p>
+    <p class="additional-info">{{ page.info | newline_to_br }}</p>
+    <a href="{{ page.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+</div>

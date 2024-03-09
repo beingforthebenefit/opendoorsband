@@ -26,3 +26,5 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  shows:
+    output: true
