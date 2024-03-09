@@ -17,11 +17,13 @@ title: Shows
                     {% if show.image %}
                         <img src="{{ show.image }}" alt="{{ show.venue }}" class="show-image">
                     {% endif %}
-                    <p class="date">{{ show.date | date_to_string }}</p>
-                    <p class="venue">{{ show.venue }}</p>
-                    <p class="location">{{ show.location }}</p>
-                    <p class="additional-info">{{ show.info }}</p>
-                    <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+                    <div class="show-details">
+                        <p class="date">{{ show.date | date_to_string }}</p>
+                        <p class="venue">{{ show.venue }}</p>
+                        <p class="location">{{ show.location }}</p>
+                        <p class="additional-info">{{ show.info }}</p>
+                        <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+                    </div>
                 </div>
             {% endif %}
         {% endfor %}
@@ -36,11 +38,16 @@ title: Shows
             {% if show_date < current_date %}
                 <!-- Past show HTML structure -->
                 <div class="show">
-                    <p class="date">{{ show.date | date_to_string }}</p>
-                    <p class="venue">{{ show.venue }}</p>
-                    <p class="location">{{ show.location }}</p>
-                    <p class="additional-info">{{ show.info }}</p>
-                    <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+                    {% if show.image %}
+                        <img src="{{ show.image }}" alt="{{ show.venue }}" class="show-image">
+                    {% endif %}
+                    <div class="show-details">
+                        <p class="date">{{ show.date | date_to_string }}</p>
+                        <p class="venue">{{ show.venue }}</p>
+                        <p class="location">{{ show.location }}</p>
+                        <p class="additional-info">{{ show.info }}</p>
+                        <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+                    </div>
                 </div>
             {% endif %}
         {% endfor %}

@@ -4,6 +4,8 @@
 }
 
 .show {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 20px;
@@ -11,10 +13,14 @@
 }
 
 .show-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 15px;
+    max-height: 300px;
+    width: auto;
+    float: right;
+    margin-left: 15px;
+}
+
+.show-details {
+    flex-grow: 1;
 }
 
 .date, .venue, .location, .additional-info {
