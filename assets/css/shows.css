@@ -18,6 +18,7 @@
     width: auto;
     order: 2;
     margin-left: 15px;
+    border-radius: 10px;
 }
 
 .show-details {
