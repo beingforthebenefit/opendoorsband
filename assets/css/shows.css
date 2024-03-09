@@ -1,26 +1,37 @@
 .shows-container {
-    margin: 20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .show {
-    background-color: #f3f3f3;
+    border: 1px solid #ddd;
     padding: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
+}
+
+.show-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.date, .venue, .location, .additional-info {
     margin-bottom: 10px;
 }
 
-.date {
-    font-size: 1.2em;
-    font-weight: bold;
+.ticket-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.venue {
-    font-size: 1.1em;
-    color: #139EAD; /* Adjust color to fit your design */
-}
-
-.location {
-    font-style: italic;
+.ticket-link:hover {
+    background-color: #0056b3;
 }
 
 .additional-info {
@@ -28,16 +39,6 @@
     font-size: 0.9em;
 }
 
-.ticket-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #139EAD;
-    color: white;
-    text-decoration: none;
-    border-radius: 3px;
-    margin-top: 5px;
-}
-
 .ticket-link:hover {
-    background-color: #0f7a9a; /* Darker shade for hover */
+    background-color: #0f7a9a;
 }
