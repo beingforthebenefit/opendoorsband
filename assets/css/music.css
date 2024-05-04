@@ -2,9 +2,15 @@
 .music-page {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     height: 75vh;
     color: black; /* Set text color to black */
+}
+
+.music-title {
+    font-family: 'Cinzel, sans-serif';
+    text-transform: uppercase;
 }
 
 .left-column, .right-column {
