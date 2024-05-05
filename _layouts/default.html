@@ -14,9 +14,30 @@
     <link rel="stylesheet" href="{{ '/assets/css/contact.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/404.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="Open Doors">
+    <meta name="keywords" content="Open Doors, band, music, rock, pop, alternative">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="English">
+    <meta name="generator" content="Jekyll">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:image" content="{{ '/assets/img/open-doors-logo.jpg' | relative_url }}">
+    <meta property="og:site_name" content="Open Doors">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@opendoorsband">
+    <meta name="twitter:creator" content="@opendoorsband">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ '/assets/img/open-doors-logo.jpg' | relative_url }}">
+    <meta name="twitter:image:alt" content="Open Doors">
 </head>
 <body>
     {% include header.html %}
@@ -24,5 +45,6 @@
     {{ content }}
 
     {% include footer.html %}
+    {% include schema.html %}
 </body>
 </html>

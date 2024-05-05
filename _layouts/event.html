@@ -1,0 +1,21 @@
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{ page.title }}",
+  "startDate": "{{ page.start_date | date: '%Y-%m-%d' }}",
+  "endDate": "{{ page.end_date | date: '%Y-%m-%d' }}",
+  "location": {
+    "@type": "Place",
+    "name": "{{ page.location.name }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ page.location.address }}",
+      "postalCode": "{{ page.location.postal_code }}"
+    }
+  }
+}
+</script>
