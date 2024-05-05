@@ -1,8 +1,8 @@
 # Site settings
 title: Open Doors Band
 description: A Doors Tribute Band
-baseurl: "/opendoorsband" # the subpath of your site, e.g. /blog
-url: "https://beingforthebenefit.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://opendoorsband.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
