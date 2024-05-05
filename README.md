@@ -5,4 +5,4 @@ Website for the band Open Doors
 
 ## Start the container
 
-`docker compose up`
+- `docker compose up`
