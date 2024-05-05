@@ -1,0 +1,15 @@
+# Robots.txt file for Open Doors
+
+User-agent: *
+Disallow: /private/
+Allow: /
+
+# Allow search engines to crawl and index all pages except the private one
+Sitemap: http://example.com/sitemap.xml
+
+# Specify which user agents are allowed or disallowed
+User-agent: Googlebot
+Disallow: /music/
+
+User-agent: Bingbot
+Allow: /
