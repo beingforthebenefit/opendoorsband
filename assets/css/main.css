@@ -30,6 +30,14 @@
     z-index: -1;
 }
 
+.about-us {
+    display: flex;
+    padding: 50px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /* Keyframes for slide-in animation */
 @keyframes slideIn {
     from {
