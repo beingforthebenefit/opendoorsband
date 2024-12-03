@@ -1,4 +1,9 @@
 # _data/shows.yml
+- date: 2024-12-03
+  venue: "Hotel Utah Saloon"
+  location: "San Francisco, CA"
+  info: "Doors Open at 7pm. Open Doors start at 10pm."
+
 - date: 2024-05-10
   venue: "Retro Junkie"
   location: "Walnut Creek, CA"
