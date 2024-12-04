@@ -3,6 +3,7 @@
   venue: "Hotel Utah Saloon"
   location: "San Francisco, CA"
   info: "Doors Open at 7pm. Open Doors start at 10pm."
+  image: "/assets/img/fliers/12-04-24.jpg"
 
 - date: 2024-05-10
   venue: "Retro Junkie"
