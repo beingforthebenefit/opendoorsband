@@ -8,33 +8,40 @@ description: The Open Doors - Upcoming and past shows
     <!-- Upcoming Shows -->
     <h2>Upcoming Shows</h2>
     <div id="future-shows">
-        {% assign sorted_shows = site.data.shows | sort: 'date' %}
-        {% for show in sorted_shows %}
-            {% assign show_date = show.date | date: '%Y-%m-%d' %}
-            {% assign current_date = site.time | date: '%Y-%m-%d' %}
-            {% if show_date >= current_date %}
-                <!-- Future show HTML structure -->
-                <div class="show">
-                    {% if show.image %}
-                        <a href="{{ show.image }}" target="_blank" class="show-image">
-                            <img src="{{ show.image }}" alt="{{ show.venue }}" class="show-image">
-                        </a>
-                    {% endif %}
-                    <div class="show-details">
-                        <p class="date">{{ show.date | date_to_string }}</p>
-                        <p class="venue">{{ show.venue }}</p>
-                        <p class="location">{{ show.location }}</p>
-                        <p class="additional-info">{{ show.info }}</p>
-                        <!-- <a href="{{ show.url }}" class="ticket-link" target="_blank">More Info</a> -->
-                        <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+        {% if upcoming_shows.size > 0 %}
+            {% assign sorted_shows = site.data.shows | sort: 'date' %}
+            {% for show in sorted_shows %}
+                {% assign show_date = show.date | date: '%Y-%m-%d' %}
+                {% assign current_date = site.time | date: '%Y-%m-%d' %}
+                {% if show_date >= current_date %}
+                    <!-- Future show HTML structure -->
+                    <div class="show">
+                        {% if show.image %}
+                            <a href="{{ show.image }}" target="_blank" class="show-image">
+                                <img src="{{ show.image }}" alt="{{ show.venue }}" class="show-image">
+                            </a>
+                        {% endif %}
+                        <div class="show-details">
+                            <p class="date">{{ show.date | date_to_string }}</p>
+                            <p class="venue">{{ show.venue }}</p>
+                            <p class="location">{{ show.location }}</p>
+                            <p class="additional-info">{{ show.info }}</p>
+                            <!-- <a href="{{ show.url }}" class="ticket-link" target="_blank">More Info</a> -->
+                            <a href="{{ show.eventLink }}" class="ticket-link" target="_blank">Event Link</a>
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="no-upcoming">
+                Nothing is on the books! 
+                <a href="mailto:contact@opendoorsband.com">Email us</a> to book a show.
+            </p>
+        {% endif %}
     </div>
 
     <!-- Past Shows -->
-    <h2>Past Shows</h2>
+    <h2>Recent Past Shows</h2>
     <div id="past-shows">
         {% for show in site.data.shows %}
             {% assign show_date = show.date | date: '%Y-%m-%d' %}
