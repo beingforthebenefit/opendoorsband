@@ -16,6 +16,7 @@ description: The Open Doors - Photos
                 src="{{ thumb | relative_url }}"
                 alt="{{ image.alt }}"
                 onclick="changeImage('{{ image.url | relative_url }}')"
+                loading="lazy"
             >
         {% endfor %}
     </div>
