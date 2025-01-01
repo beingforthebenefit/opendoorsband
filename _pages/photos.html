@@ -9,9 +9,14 @@ description: The Open Doors - Photos
         <img id="main-image" src="{{ '/assets/img/photos/wedding-1.jpg' | relative_url }}" alt="Open Doors playing at Retro Junkie">
     </div>
     <div class="thumbnails-container">
-        <!-- Thumbnails -->
         {% for image in site.data.gallery_images %}
-            <img class="thumbnail" src="{{ image.url | relative_url }}" alt="{{ image.alt }}" onclick="changeImage('{{ image.url | relative_url }}')">
+            {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
+            <img
+                class="thumbnail"
+                src="{{ thumb | relative_url }}"
+                alt="{{ image.alt }}"
+                onclick="changeImage('{{ image.url | relative_url }}')"
+            >
         {% endfor %}
     </div>
 </div>
