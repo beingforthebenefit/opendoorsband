@@ -21,4 +21,22 @@ jobs:
           git config --global user.email 'action@github.com'
           git checkout gh-pages
           git merge --no-ff --no-edit main
-          git push origin gh-pages
+
+      - name: Install Image Optimization Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick optipng
+
+      - name: Run Image Processing Script
+        run: |
+          chmod +x process_images.sh
+          ./process_images.sh
+
+      - name: Commit Processed Images
+        run: |
+          # Only commit if there are changes (avoids empty commit error)
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Process images via GitHub Action"
+            git push origin gh-pages
+          fi
