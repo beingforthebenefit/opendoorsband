@@ -5,11 +5,15 @@
 }
 
 .main-image-container {
-    height: 800px; /* Fixed height for the main image container */
-    line-height: 400px; /* Same as the height to help vertically center the image */
-    text-align: center;
+    position: relative; /* Important so arrows can be absolutely positioned inside */
+    height: 800px;
     margin-bottom: 20px;
-    overflow: hidden; /* Ensures the image doesn't exceed the container */
+    overflow: hidden;
+    text-align: center;
+}
+
+.main-image-container img {
+    transition: opacity 0.3s ease;
 }
 
 .main-image-container img {
@@ -48,10 +52,54 @@
     opacity: 1;
 }
 
-/* Mobile Styles */
+.thumbnail.active {
+    border: 2px solid #3498db;
+    opacity: 1;
+}
+
+/* Arrow buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect */
+.arrow:hover {
+    opacity: 1;
+}
+
+/* Left arrow on left edge */
+.left-arrow {
+    left: 10px;
+}
+
+/* Right arrow on right edge */
+.right-arrow {
+    right: 10px;
+}
+
+/* Disabled arrow (beginning or end) */
+.arrow.disabled {
+    opacity: 0.3;
+    pointer-events: none; /* can't click */
+}
+
+/* Mobile overrides */
 @media screen and (max-width: 768px) {
     .main-image-container {
         height: 400px;
-        line-height: 200px;
+    }
+    .arrow {
+        font-size: 1.5rem;
+        padding: 0.2rem 0.4rem;
     }
 }
