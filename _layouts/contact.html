@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url | default: 'https://opendoorsband.com' }}"
+  },
+  "about": {
+    "@type": "MusicGroup",
+    "name": "The Open Doors",
+    "url": "{{ site.url | default: 'https://opendoorsband.com' }}"
+  }
+}
+</script>
+
+{{ content }}
