@@ -44,11 +44,41 @@ description: The Open Doors - Photos
     const rightArrow = document.querySelector('.right-arrow');
     const thumbnails = document.querySelectorAll('.thumbnail');
 
+    // Touch variables
+    let startX = 0;
+    const SWIPE_THRESHOLD = 50;  // Minimum px swipe distance to trigger
+
+    // Grab the container for the main image
+    const mainImageContainer = document.querySelector('.main-image-container');
+
+    // Listen for touchstart / touchend
+    mainImageContainer.addEventListener('touchstart', handleTouchStart, false);
+    mainImageContainer.addEventListener('touchend', handleTouchEnd, false);
+
+    function handleTouchStart(e) {
+      // Record the starting touch X
+      startX = e.changedTouches[0].clientX;
+    }
+
+    function handleTouchEnd(e) {
+      // Compare the finishing touch X
+      const endX = e.changedTouches[0].clientX;
+      const deltaX = endX - startX;
+
+      // If swipe is significant enough:
+      if (deltaX > SWIPE_THRESHOLD) {
+        // Moved finger to the right => previous image
+        prevImage();
+      } else if (deltaX < -SWIPE_THRESHOLD) {
+        // Moved finger to the left => next image
+        nextImage();
+      }
+    }
+
     function changeImage(newSrc) {
         // Fade out the current image
         mainImage.style.opacity = 0;
 
-        // After 300ms (the transition duration), swap the src and fade back in
         setTimeout(() => {
             mainImage.src = newSrc;
             mainImage.style.opacity = 1; // fade in
@@ -94,7 +124,6 @@ description: The Open Doors - Photos
         }
     }
 
-    // Initialize on page load
     updateActiveThumbnail();
     updateArrows();
 </script>
