@@ -5,16 +5,19 @@
 }
 
 .main-image-container {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 800px;
-    margin-bottom: 20px;
     overflow: hidden;
-    text-align: center;
-}
-
-.main-image-container img {
+  }
+  
+  .main-image-container img {
     transition: opacity 0.3s ease;
-}
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
 
 .main-image-container img {
     max-height: 100%;
