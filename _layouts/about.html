@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntityOfPage": {
+    "@type": "WebSite",
+    "@id": "{{ site.url | default: 'https://opendoorsband.com' }}"
+  },
+  "about": {
+    "@type": "MusicGroup",
+    "name": "The Open Doors",
+    "description": "A Doors tribute band from the SF Bay Area.",
+    "genre": "Rock"
+  }
+}
+</script>
+
+{{ content }}

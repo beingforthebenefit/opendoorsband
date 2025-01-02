@@ -1,13 +1,21 @@
 ---
-layout: default
+layout: photos
 title: Photos
 description: The Open Doors - Photos
 ---
 
 <div class="gallery-container">
     <div class="main-image-container">
+        <!-- Left Arrow -->
+        <button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+
+        <!-- Main Image -->
         <img id="main-image" src="{{ '/assets/img/photos/wedding-1.jpg' | relative_url }}" alt="Open Doors playing at Retro Junkie">
+
+        <!-- Right Arrow -->
+        <button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
     </div>
+
     <div class="thumbnails-container">
         {% for image in site.data.gallery_images %}
             {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
@@ -21,3 +29,75 @@ description: The Open Doors - Photos
         {% endfor %}
     </div>
 </div>
+
+<script>
+    // Gather all image URLs
+    const galleryImages = [
+        {% for image in site.data.gallery_images %}
+            '{{ image.url | relative_url }}',
+        {% endfor %}
+    ];
+
+    // Track which index we're currently showing
+    let currentIndex = 0;
+
+    // Cache some elements
+    const mainImage = document.getElementById('main-image');
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+
+    // Called whenever we change the main image
+    function changeImage(newSrc) {
+        mainImage.src = newSrc;
+        currentIndex = galleryImages.indexOf(newSrc);
+
+        updateActiveThumbnail();
+        updateArrows();
+    }
+
+    // Move to the next image
+    function nextImage() {
+        if (currentIndex < galleryImages.length - 1) {
+            currentIndex++;
+            changeImage(galleryImages[currentIndex]);
+        }
+    }
+
+    // Move to the previous image
+    function prevImage() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            changeImage(galleryImages[currentIndex]);
+        }
+    }
+
+    // Highlight the active thumbnail
+    function updateActiveThumbnail() {
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        // currentIndex might be -1 if the image isn't found, so safeguard:
+        if (currentIndex >= 0 && currentIndex < thumbnails.length) {
+            thumbnails[currentIndex].classList.add('active');
+        }
+    }
+
+    // Disable/fade arrows when at first or last image
+    function updateArrows() {
+        if (currentIndex <= 0) {
+            leftArrow.classList.add('disabled');
+        } else {
+            leftArrow.classList.remove('disabled');
+        }
+
+        if (currentIndex >= galleryImages.length - 1) {
+            rightArrow.classList.add('disabled');
+        } else {
+            rightArrow.classList.remove('disabled');
+        }
+    }
+
+    // Initial setup on page load
+    // If you want the first image to be "active," then do:
+    updateActiveThumbnail();
+    updateArrows();
+</script>
