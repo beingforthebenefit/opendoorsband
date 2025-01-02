@@ -38,25 +38,27 @@ description: The Open Doors - Photos
         {% endfor %}
     ];
 
-    // Track which index we're currently showing
     let currentIndex = 0;
-
-    // Cache some elements
     const mainImage = document.getElementById('main-image');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
     const thumbnails = document.querySelectorAll('.thumbnail');
 
-    // Called whenever we change the main image
     function changeImage(newSrc) {
-        mainImage.src = newSrc;
-        currentIndex = galleryImages.indexOf(newSrc);
+        // Fade out the current image
+        mainImage.style.opacity = 0;
 
-        updateActiveThumbnail();
-        updateArrows();
+        // After 300ms (the transition duration), swap the src and fade back in
+        setTimeout(() => {
+            mainImage.src = newSrc;
+            mainImage.style.opacity = 1; // fade in
+
+            currentIndex = galleryImages.indexOf(newSrc);
+            updateActiveThumbnail();
+            updateArrows();
+        }, 200);
     }
 
-    // Move to the next image
     function nextImage() {
         if (currentIndex < galleryImages.length - 1) {
             currentIndex++;
@@ -64,7 +66,6 @@ description: The Open Doors - Photos
         }
     }
 
-    // Move to the previous image
     function prevImage() {
         if (currentIndex > 0) {
             currentIndex--;
@@ -72,16 +73,13 @@ description: The Open Doors - Photos
         }
     }
 
-    // Highlight the active thumbnail
     function updateActiveThumbnail() {
         thumbnails.forEach(thumb => thumb.classList.remove('active'));
-        // currentIndex might be -1 if the image isn't found, so safeguard:
         if (currentIndex >= 0 && currentIndex < thumbnails.length) {
             thumbnails[currentIndex].classList.add('active');
         }
     }
 
-    // Disable/fade arrows when at first or last image
     function updateArrows() {
         if (currentIndex <= 0) {
             leftArrow.classList.add('disabled');
@@ -96,8 +94,7 @@ description: The Open Doors - Photos
         }
     }
 
-    // Initial setup on page load
-    // If you want the first image to be "active," then do:
+    // Initialize on page load
     updateActiveThumbnail();
     updateArrows();
 </script>

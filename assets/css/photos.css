@@ -5,7 +5,7 @@
 }
 
 .main-image-container {
-    position: relative; /* Important so arrows can be absolutely positioned inside */
+    position: relative;
     height: 800px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -19,8 +19,8 @@
 .main-image-container img {
     max-height: 100%;
     max-width: 100%;
-    vertical-align: middle; /* Aligns image vertically */
-    object-fit: cover; /* Ensures the image covers the area, might crop */
+    vertical-align: middle;
+    object-fit: cover; 
 }
 
 .thumbnails-container {
@@ -30,13 +30,13 @@
 }
 
 .thumbnail {
-    width: 100px; /* Fixed width */
-    height: 100px; /* Fixed height for square aspect ratio */
+    width: 100px;
+    height: 100px;
     margin: 5px;
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.3s ease;
-    overflow: hidden; /* Ensures the image doesn't exceed the thumbnail */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@
 .thumbnail img {
     width: auto;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the area, might crop */
+    object-fit: cover;
 }
 
 .thumbnail:hover {
@@ -89,7 +89,7 @@
 
 /* Disabled arrow (beginning or end) */
 .arrow.disabled {
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none; /* can't click */
 }
 
