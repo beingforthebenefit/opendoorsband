@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicPlaylist",
+  "name": "Open Doors Best Tracks",
+  "description": "A curated playlist of The Open Doors' best tracks on SoundCloud.",
+  "track": [
+    {% for song in site.data.songs %}
+        {
+            "@type": "MusicRecording",
+            "name": "{{ song.title }}",
+            "url": "{{ song.url }}"
+        }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{{ content }}

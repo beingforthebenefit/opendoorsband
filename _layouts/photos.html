@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/lightbox/dist/css/lightbox.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "associatedMedia": [
+    {% for image in site.data.gallery_images %}
+    {
+      "@type": "ImageObject",
+      "url": "{{ image.url | absolute_url }}",
+      "description": "{{ image.alt | escape }}",
+      "thumbnailUrl": "{{ image.url | replace: '.jpg', '-thumb.jpg' | absolute_url }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{{ content }}
+
+<script src="/assets/lightbox/dist/js/lightbox-plus-jquery.js"></script>
+<script>
+  lightbox.option({
+    'fadeDuration': 200,
+    'resizeDuration': 200
+  })
+</script>

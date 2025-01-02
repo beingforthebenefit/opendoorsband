@@ -28,7 +28,7 @@ set -euo pipefail
 MAX_DIM="1200"        # max width/height for large images
 JPEG_QUALITY="85"     # compression level for JPG (1–100)
 PNG_OPTIM="-o7"       # optipng optimization level (0–7)
-THUMB_SIZE="100"      # thumbnail dimension (100x100 for JPG)
+THUMB_SIZE="200"      # thumbnail dimension (100x100 for JPG)
 
 ################################
 #  INPUT DIRECTORIES

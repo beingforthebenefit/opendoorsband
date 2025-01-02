@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "The Open Doors",
+  "description": "A Doors tribute band from the SF Bay Area.",
+  "genre": "Classic Rock",
+  "url": "{{ site.url | default: 'https://opendoorsband.com' }}",
+  "image": "{{ '/assets/img/band-photo.jpg' | absolute_url }}",
+  "member": [
+    {
+      "@type": "Person",
+      "name": "Oscar Fleming",
+      "description": "Lead singer & founding member",
+      "jobTitle": "Singer"
+    },
+    {
+      "@type": "Person",
+      "name": "Gerald Todd",
+      "description": "Keyboard/Organ player & lifelong pianist",
+      "jobTitle": "Keyboard/Organ"
+    },
+    {
+      "@type": "Person",
+      "name": "Pato Milo",
+      "description": "Guitarist",
+      "jobTitle": "Guitarist"
+    },
+    {
+      "@type": "Person",
+      "name": "Ed Glantz",
+      "description": "Drummer, backup vocals",
+      "jobTitle": "Drummer"
+    },
+    {
+      "@type": "Person",
+      "name": "John Arntz",
+      "description": "Bassist, backup vocals",
+      "jobTitle": "Bassist"
+    }
+  ]
+}
+</script>
+
+{{ content }}

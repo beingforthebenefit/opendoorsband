@@ -1,23 +1,28 @@
 ---
-layout: default
+layout: photos
 title: Photos
 description: The Open Doors - Photos
 ---
 
 <div class="gallery-container">
-    <div class="main-image-container">
-        <img id="main-image" src="{{ '/assets/img/photos/wedding-1.jpg' | relative_url }}" alt="Open Doors playing at Retro Junkie">
-    </div>
-    <div class="thumbnails-container">
-        {% for image in site.data.gallery_images %}
-            {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
-            <img
-                class="thumbnail"
-                src="{{ thumb | relative_url }}"
-                alt="{{ image.alt }}"
-                onclick="changeImage('{{ image.url | relative_url }}')"
-                loading="lazy"
-            >
-        {% endfor %}
-    </div>
+  <h1 class="contact-title">Open Doors Photo Gallery</h1>
+  <div class="thumbnails-container">
+    {% for image in site.data.gallery_images %}
+      {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
+
+      <a 
+        href="{{ image.url | relative_url }}"
+        data-lightbox="opendoors"
+        data-title="{{ image.alt | escape }}"
+      >
+        <img 
+          class="thumbnail"
+          src="{{ thumb | relative_url }}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+        >
+      </a>
+
+    {% endfor %}
+  </div>
 </div>
