@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<link rel="stylesheet" href="/assets/lightbox/dist/css/lightbox.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,3 +22,11 @@ layout: default
 </script>
 
 {{ content }}
+
+<script src="/assets/lightbox/dist/js/lightbox-plus-jquery.js"></script>
+<script>
+  lightbox.option({
+    'fadeDuration': 200,
+    'resizeDuration': 200
+  })
+</script>

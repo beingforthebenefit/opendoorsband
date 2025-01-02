@@ -33,9 +33,9 @@
 }
 
 .thumbnail {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 200px;
+    height: 200px;
+    margin: 1px;
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.3s ease;

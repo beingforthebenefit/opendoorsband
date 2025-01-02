@@ -5,125 +5,24 @@ description: The Open Doors - Photos
 ---
 
 <div class="gallery-container">
-    <div class="main-image-container">
-        <!-- Left Arrow -->
-        <button class="arrow left-arrow" onclick="prevImage()">&#10094;</button>
+  <h1 class="contact-title">Open Doors Photo Gallery</h1>
+  <div class="thumbnails-container">
+    {% for image in site.data.gallery_images %}
+      {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
 
-        <!-- Main Image -->
-        <img id="main-image" src="{{ '/assets/img/photos/wedding-1.jpg' | relative_url }}" alt="Open Doors playing at Retro Junkie">
+      <a 
+        href="{{ image.url | relative_url }}"
+        data-lightbox="opendoors"
+        data-title="{{ image.alt | escape }}"
+      >
+        <img 
+          class="thumbnail"
+          src="{{ thumb | relative_url }}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+        >
+      </a>
 
-        <!-- Right Arrow -->
-        <button class="arrow right-arrow" onclick="nextImage()">&#10095;</button>
-    </div>
-
-    <div class="thumbnails-container">
-        {% for image in site.data.gallery_images %}
-            {% assign thumb = image.url | replace: ".jpg", "-thumb.jpg" %}
-            <img
-                class="thumbnail"
-                src="{{ thumb | relative_url }}"
-                alt="{{ image.alt }}"
-                onclick="changeImage('{{ image.url | relative_url }}')"
-                loading="lazy"
-            >
-        {% endfor %}
-    </div>
+    {% endfor %}
+  </div>
 </div>
-
-<script>
-    // Gather all image URLs
-    const galleryImages = [
-        {% for image in site.data.gallery_images %}
-            '{{ image.url | relative_url }}',
-        {% endfor %}
-    ];
-
-    let currentIndex = 0;
-    const mainImage = document.getElementById('main-image');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    const thumbnails = document.querySelectorAll('.thumbnail');
-
-    // Touch variables
-    let startX = 0;
-    const SWIPE_THRESHOLD = 50;  // Minimum px swipe distance to trigger
-
-    // Grab the container for the main image
-    const mainImageContainer = document.querySelector('.main-image-container');
-
-    // Listen for touchstart / touchend
-    mainImageContainer.addEventListener('touchstart', handleTouchStart, false);
-    mainImageContainer.addEventListener('touchend', handleTouchEnd, false);
-
-    function handleTouchStart(e) {
-      // Record the starting touch X
-      startX = e.changedTouches[0].clientX;
-    }
-
-    function handleTouchEnd(e) {
-      // Compare the finishing touch X
-      const endX = e.changedTouches[0].clientX;
-      const deltaX = endX - startX;
-
-      // If swipe is significant enough:
-      if (deltaX > SWIPE_THRESHOLD) {
-        // Moved finger to the right => previous image
-        prevImage();
-      } else if (deltaX < -SWIPE_THRESHOLD) {
-        // Moved finger to the left => next image
-        nextImage();
-      }
-    }
-
-    function changeImage(newSrc) {
-        // Fade out the current image
-        mainImage.style.opacity = 0;
-
-        setTimeout(() => {
-            mainImage.src = newSrc;
-            mainImage.style.opacity = 1; // fade in
-
-            currentIndex = galleryImages.indexOf(newSrc);
-            updateActiveThumbnail();
-            updateArrows();
-        }, 200);
-    }
-
-    function nextImage() {
-        if (currentIndex < galleryImages.length - 1) {
-            currentIndex++;
-            changeImage(galleryImages[currentIndex]);
-        }
-    }
-
-    function prevImage() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            changeImage(galleryImages[currentIndex]);
-        }
-    }
-
-    function updateActiveThumbnail() {
-        thumbnails.forEach(thumb => thumb.classList.remove('active'));
-        if (currentIndex >= 0 && currentIndex < thumbnails.length) {
-            thumbnails[currentIndex].classList.add('active');
-        }
-    }
-
-    function updateArrows() {
-        if (currentIndex <= 0) {
-            leftArrow.classList.add('disabled');
-        } else {
-            leftArrow.classList.remove('disabled');
-        }
-
-        if (currentIndex >= galleryImages.length - 1) {
-            rightArrow.classList.add('disabled');
-        } else {
-            rightArrow.classList.remove('disabled');
-        }
-    }
-
-    updateActiveThumbnail();
-    updateArrows();
-</script>
